@@ -14,7 +14,7 @@ public class GamePanel extends JPanel implements ActionListener {
 
     final int SCREEN_WIDTH = 900;
     final int SCREEN_HEIGHT = 900;
-    final int UNIT_SIZE = 25;
+    final int UNIT_SIZE = 50;
     final int GAME_UNITS = (SCREEN_WIDTH * SCREEN_HEIGHT) / UNIT_SIZE;
     final int[] x = new int[GAME_UNITS];
     final int[] y = new int[GAME_UNITS];
@@ -199,6 +199,13 @@ public class GamePanel extends JPanel implements ActionListener {
                 case KeyEvent.VK_DOWN:
                     if (direction != 'U') {
                         direction = 'D';
+                    }
+                    break;
+                case KeyEvent.VK_P:
+                    if (timer.isRunning()) {
+                        timer.stop();
+                    } else {
+                        timer.start();
                     }
                     break;
             }
